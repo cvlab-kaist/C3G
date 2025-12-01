@@ -89,26 +89,29 @@ For 3D scene understanding evaluation, we use [ScanNet](http://www.scan-net.org/
 
 ## Training
 ### Gaussian head Training
-To training Gaussian head, you can run following command:
+For training Gaussian head, you can run following commands.
+
+To train Gaussian head:
 ```bash
 python -m src.main +training=gaussian_head wandb.mode=online wandb.name="wandb_name"
 ```
-For multi-view training, you can run following command:
+To train Gaussian head when multi-view available:
 ```bash
 python -m src.main +training=gaussian_head_multiview wandb.mode=online wandb.name="wandb_name"
 ```
-To train faster, you can continue from the 2-view training settings using the following command:
+To train faster Gaussian head when multi-view available, you can continue from the 2-view training settings:
 ```bash
 python -m src.main +training=gaussian_head wandb.mode=online wandb.name="wandb_name" checkpointing.load="2view_checkpoint" model.decoder.low_pass_filter=0.3
 ```
+If you do not want to log to wandb, you just set `wandb.mode=disabled`
 
 ### Feature head Training
-To training Feature head for LSeg, you can run the following command:
-
+For training Feature head, you can run following commands.
 <b>IMPORTANT:</b> When you change the model, you should change the cuda rasterizer. You should change the `NUM_SEMANTIC_CHANNELS` in `./submodules/diff_gaussian_rasterization_w_feature_detach/cuda_rasterizer/config.h` with each feature extractor's feature dimension. <br>
 (e.g., 512 for LSeg, 768 for DINOv2-base, 1024 for DINOv2-large, DINOv3-large, or 128 for VGGT-tracking)
 
 
+To training Feature head for various VFM models:
 ```bash
 ## for LSeg
 python -m src.main +training=feature_head_lseg wandb.mode=online wandb.name="wandb_name" model.encoder.pretrained_weights="2view_checkpoint"
@@ -127,26 +130,26 @@ python -m src.main +training=feature_head_vggt wandb.mode=online wandb.name="wan
 ```
 If you do not want to log to wandb, you just set `wandb.mode=disabled`
 
-For multi-view training, you can run following command:
+This is the example of training feature head when multi-view input available:
 ```bash
 ## for LSeg
 python -m src.main +training=feature_head_lseg_multiview wandb.mode=online wandb.name="wandb_name" model.encoder.pretrained_weights="multiview_checkpoint"
 ```
 
 ## Evaluation
-To evaluate 2 view novel view synthesis, you can run the following command:
 
+Evaluation code of novel view synthesis on RealEstate10K dataset when only 2 view is available.
 ```bash
 python -m src.main +evaluation=re10k mode=test dataset/view_sampler@dataset.re10k.view_sampler=evaluation dataset.re10k.view_sampler.index_path=assets/evaluation_index_re10k.json test.save_compare=true wandb.mode=online checkpointing.load="checkpoint_path" wandb.name="wandb_name" 
 ```
 
-To evaluate multi-view novel view synthesis, you can run the following command:
+Evaluation code of novel view synthesis on RealEstate10K dataset when multi-view is available.
 
 ```bash
 python -m src.main +evaluation=re10k_multiview mode=test dataset/view_sampler@dataset.re10k.view_sampler=evaluation dataset.re10k.view_sampler.index_path=assets/evaluation_index_re10k.json test.save_compare=true wandb.mode=online checkpointing.load="checkpoint_path" wandb.name="wandb_name" 
 ```
 
-To evaluate the 3D scene understanding evaluation, you can run the following command:
+Evaluation code of 3D scene understanding on ScanNet dataset.
 
 ```bash
 python -m src.main +evaluation=scannet wandb.mode=online mode=test test.save_compare=true test.pose_align_steps=1000 checkpointing.load="checkpoint_path" wandb.name="wandb_name" 
