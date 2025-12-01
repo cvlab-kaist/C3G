@@ -1,0 +1,194 @@
+{
+    "scan1_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan8_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan21_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan30_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan31_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan34_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan38_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan40_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan41_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan45_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan55_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan63_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan82_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan103_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan110_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    },
+    "scan114_train": {
+        "context": [
+            33,
+            31
+        ],
+        "target": [
+            32,
+            24,
+            44,
+            23
+        ]
+    }
+}

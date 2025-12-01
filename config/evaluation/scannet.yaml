@@ -1,0 +1,57 @@
+# @package _global_
+
+defaults:
+  - /dataset@_group_.scannet_eval: scannet_eval
+  - override /model/encoder: noposplat
+  - override /model/encoder/backbone: croco
+  - override /loss: [mse, lpips]
+
+wandb:
+  name: re10k_eval
+  tags: [re10k, 256x256]
+
+model:
+  encoder:
+    backbone:
+      name: vggt_multi
+    gaussian_adapter:
+      sh_degree: 0
+      clamping: -1
+    name: vggt
+    num_gaussians: 2048
+    gs_params_head_type: dpt_gs
+    pose_free: true
+    intrinsics_embed_loc: None
+    intrinsics_embed_type: None
+    pretrained_weights: 'pretrained_weights'
+    gaussian_feature_dim: 512
+    attention_instill: true
+    attention_instill_detach: false
+  decoder:
+    make_scale_invariant: true
+    decrease_lpf_step: 1000
+    feature_detach: true
+
+
+optimizer:
+  lr: 1e-4
+  warm_up_steps: 1000
+  backbone_lr_multiplier: 0.01
+
+data_loader:
+  train:
+    batch_size: 4
+
+train:
+  context_view_loss: true
+  reproj_model: lseg
+  feature_rendering_loss: 0.01
+
+trainer:
+  max_steps: 5001
+  val_check_interval: 1000
+  accumulate_grad_batches: 1
+
+checkpointing:
+  every_n_train_steps: 10000
+  save_top_k: 5

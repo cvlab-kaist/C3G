@@ -1,0 +1,63 @@
+# @package _global_
+
+defaults:
+  - /dataset@_group_.re10k: re10k
+  - override /model/encoder: noposplat
+  - override /model/encoder/backbone: croco
+  - override /loss: [mse, lpips]
+
+wandb:
+  name: re10k
+  tags: [re10k, 256x256]
+
+model:
+  encoder:
+    backbone:
+      name: vggt_multi
+    gaussian_adapter:
+      sh_degree: 0
+      clamping: -1
+    name: vggt
+    num_gaussians: 2048
+    gs_params_head_type: dpt_gs
+    pose_free: true
+    intrinsics_embed_loc: None
+    intrinsics_embed_type: None
+    pretrained_weights: './pretrained_weights/model.pt'
+    init_points: one_point
+    gaussian_feature_dim: 512
+  decoder:
+    make_scale_invariant: true
+    decrease_lpf_step: 1000
+    feature_detach: true
+
+dataset:
+  re10k:
+    view_sampler:
+      warm_up_steps: 37500
+      num_context_views: 24
+
+optimizer:
+  lr: 1e-4
+  warm_up_steps: 1000
+  backbone_lr_multiplier: 0.01
+
+data_loader:
+  train:
+    batch_size: 2
+
+train:
+  context_view_loss: true
+  random_select_context_view: true
+  reproj_model: lseg
+  feature_rendering_loss: 0.01
+  
+
+trainer:
+  max_steps: 5001
+  val_check_interval: 1000
+  accumulate_grad_batches: 1
+
+checkpointing:
+  every_n_train_steps: 10000
+  save_top_k: 5

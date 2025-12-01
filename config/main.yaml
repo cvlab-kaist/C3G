@@ -1,0 +1,72 @@
+defaults:
+  - model/encoder: noposplat
+  - model/decoder: splatting_cuda
+  - loss: [mse]
+
+wandb:
+  project: noposplat
+  entity: 3d_gpt
+  name: noposplat_test
+  mode: disabled
+
+mode: train
+
+#dataset:
+#  overfit_to_scene: null
+
+data_loader:
+  # Avoid having to spin up new processes to print out visualizations.
+  train:
+    num_workers: 16
+    persistent_workers: true
+    batch_size: 2
+    seed: 1234
+  test:
+    num_workers: 4
+    persistent_workers: false
+    batch_size: 1
+    seed: 2345
+  val:
+    num_workers: 1
+    persistent_workers: true
+    batch_size: 1
+    seed: 3456
+
+optimizer:
+  lr: 1.5e-4
+  warm_up_steps: 2000
+  backbone_lr_multiplier: 0.1
+
+checkpointing:
+  load: null
+  every_n_train_steps: 5000
+  save_top_k: 1
+  save_weights_only: false
+
+train:
+  depth_mode: null
+  extended_visualization: false
+  print_log_every_n_steps: 10
+
+test:
+  output_path: outputs/test
+  align_pose: true
+  pose_align_steps: 100
+  rot_opt_lr:  0.005
+  trans_opt_lr:  0.005
+  compute_scores: true
+  save_image: true
+  save_video: false
+  save_compare: false
+
+seed: 111123
+
+trainer:
+  max_steps: -1
+  val_check_interval: 250
+  gradient_clip_val: 0.5
+  num_nodes: 1
+
+hydra:
+  run:
+    dir: outputs/exp_${wandb.name}/${now:%Y-%m-%d_%H-%M-%S}
