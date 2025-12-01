@@ -105,7 +105,8 @@ python -m src.main +training=gaussian_head wandb.mode=online wandb.name="wandb_n
 ### Feature head Training
 To training Feature head for LSeg, you can run the following command:
 
-<b>IMPORTANT:</b> When you change the model, you should change the cuda rasterizer. You should change the `NUM_SEMANTIC_CHANNELS` in `./submodules/diff_gaussian_rasterization_w_feature_detach/cuda_rasterizer/config.h` with each feature extractor's feature dimension. (e.g., 512 for LSeg, 768 for DINOv2-base, 1024 for DINOv2-large, DINOv3-large, or 128 for VGGT-tracking)
+<b>IMPORTANT:</b> When you change the model, you should change the cuda rasterizer. You should change the `NUM_SEMANTIC_CHANNELS` in `./submodules/diff_gaussian_rasterization_w_feature_detach/cuda_rasterizer/config.h` with each feature extractor's feature dimension. <br>
+(e.g., 512 for LSeg, 768 for DINOv2-base, 1024 for DINOv2-large, DINOv3-large, or 128 for VGGT-tracking)
 
 
 ```bash
