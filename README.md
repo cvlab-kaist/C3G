@@ -47,10 +47,10 @@ Our approach estimates only <b>2K Gaussians</b> that allocated in meaningful reg
 to enable generalizable scene reconstruction and understanding. 
 
 ### 🚀 What to Expect
-[x] Pretrained weights. <br>
-[ ] Preprocessed version of Replica dataset. <br>
-[ ] Multi-view novel view synthesis evaluation code. <br>
-[ ] Probe3d evaluation code.
+- [x]  Pretrained weights. <br>
+- [ ] Preprocessed version of Replica dataset. <br>
+- [ ] Multi-view novel view synthesis evaluation code. <br>
+- [ ] Probe3d evaluation code.
 
 ## Installation
 
