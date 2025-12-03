@@ -84,7 +84,7 @@ gdown 1FTuHY1xPUkM-5gaDtMfgCl3D0gR89WV7 -O ./pretrained_weights/demo_e200.ckpt
 ## Data Preparation
 For training and multi-view novel view synthesis evaluation, we use the preprocessed [RealEstate10K](https://google.github.io/realestate10k/index.html) dataset following  [pixelSplat](https://github.com/dcharatan/pixelsplat) and [MVSplat](https://github.com/donydchen/mvsplat).
 
-For 3D scene understanding evaluation, we use [ScanNet](http://www.scan-net.org/) following [LSM](https://github.com/NVlabs/LSM/blob/main/data_process/data.md) and use [Replica](https://github.com/facebookresearch/Replica-Dataset) which we are then preprocessed to evaluate following [Feature 3DGS](https://github.com/ShijieZhou-UCLA/feature-3dgs).
+For 3D scene understanding evaluation, we use [ScanNet](http://www.scan-net.org/) following [LSM](https://github.com/NVlabs/LSM/blob/main/data_process/data.md) and use [Replica](https://github.com/facebookresearch/Replica-Dataset), which we follow preprocessing and evaluation protocol of [Feature 3DGS](https://github.com/ShijieZhou-UCLA/feature-3dgs).
 
 
 ## Training
