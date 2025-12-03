@@ -63,8 +63,8 @@
     <section id="overview" class="hero-section">
         <div class="hero-container">
             <h1 class="hero-title">
-                <span class="gradient-text">C3G</span>
-                : Learning Compact 3D Representations with 2K Gaussians
+                <span class="gradient-text">C3G</span>:
+                Learning Compact 3D Representations with 2K Gaussians
             </h1>
             <p class="hero-status">arXiv 2025</p>
 
@@ -237,7 +237,7 @@
 
     <section id="framework" class="section">
         <div class="container">
-            <h2 class="section-title">Our View-Invariant Feature Decoder: C3G-$\mathcal{F}$</h2>
+            <h2 class="section-title">Our Feature Decoder: C3G-$\mathcal{F}$</h2>
 
             <div class="two-column">
                 <div class="left cameo-description">
@@ -397,7 +397,7 @@
         const quantitativeData = [
             {
                 title: "RealEstate10K — Novel view synthesis",
-                desc: "Comparison of novel view synthesis with multi-view input images on RealEstate10K.",
+                desc: "Comparison of novel view synthesis with multi-view input images on RealEstate10K. <br> TTO: Short test-time optimization of Gaussian parameters.",
                 table: `
                     <table class="quant-table" role="table">
                         <thead>
@@ -421,7 +421,7 @@
                                 <td>24.196</td><td>0.842</td><td>0.192</td><td>3,309K</td>
                             </tr>
                             <tr>
-                                <td>AnySplat†</td>
+                                <td>AnySplat w/  TTO</td>
                                 <td>26.726</td><td>0.881</td><td>0.189</td><td>1,500K</td>
                                 <td>27.471</td><td>0.898</td><td>0.180</td><td>2,636K</td>
                                 <td>27.412</td><td>0.899</td><td>0.181</td><td>3,309K</td>
@@ -433,7 +433,7 @@
                                 <td>21.190</td><td>0.663</td><td>0.200</td><td>1,806K</td>
                             </tr>
                             <tr>
-                                <td>VGGT+NoPo†</td>
+                                <td>VGGT+NoPo w/  TTO</td>
                                 <td>28.540</td><td><span class="quant-max">0.898</span></td><td><span class="quant-max">0.131</span></td><td>602K</td>
                                 <td>28.463</td><td>0.902</td><td><span class="quant-max">0.135</span></td><td>1,204K</td>
                                 <td>28.100</td><td>0.898</td><td>0.145</td><td>1,806K</td>
@@ -445,7 +445,7 @@
                                 <td>23.812</td><td>0.747</td><td>0.199</td><td><span class="quant-max">2K</span></td>
                             </tr>
                             <tr>
-                                <td>Ours†</td>
+                                <td>Ours w/  TTO</td>
                                 <td><span class="quant-max">28.552</span></td><td>0.890</td><td>0.155</td><td>28K</td>
                                 <td><span class="quant-max">29.987</span></td><td><span class="quant-max">0.916</span></td><td>0.136</td><td>27K</td>
                                 <td><span class="quant-max">30.250</span></td><td><span class="quant-max">0.921</span></td><td><span class="quant-max">0.133</span></td><td>26K</td>
@@ -705,8 +705,13 @@
                 image: "./assets/3d_understanding_main.png"
             },
             {
-                title: "ScanNet - multi-view Correspondence and upsampling",
-                desc: "Multi-view correspondence estimation and feature upsampling results of VGGT-Tracking on ScanNet dataset.",
+                title: "ScanNet - multi-view Correspondence",
+                desc: "Multi-view correspondence estimation with DINOv3-Large and DINOv3-Large + Ours on ScanNet dataset.",
+                image: "./assets/corr_viz_page.png"
+            },
+            {
+                title: "ScanNet - multi-view Feature upsampling",
+                desc: "Multi-view feature upsampling results of VGGT-Tracking on ScanNet dataset.",
                 image: "./assets/matching_page.png"
             }
         ];
