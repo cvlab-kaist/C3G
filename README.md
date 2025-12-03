@@ -47,7 +47,7 @@ Our approach estimates only <b>2K Gaussians</b> that allocated in meaningful reg
 to enable generalizable scene reconstruction and understanding. 
 
 ### Expectation
-[ ] Pretrained weights. <br>
+[x] Pretrained weights. <br>
 [ ] Preprocessed version of Replica dataset. <br>
 [ ] Multi-view novel view synthesis evaluation code. <br>
 [ ] Probe3d evaluation code.
@@ -86,6 +86,18 @@ For training and multi-view novel view synthesis evaluation, we use preprocessed
 
 For 3D scene understanding evaluation, we use [ScanNet](http://www.scan-net.org/) following [LSM](https://github.com/NVlabs/LSM/blob/main/data_process/data.md) and use [Replica](https://github.com/facebookresearch/Replica-Dataset) which we are then preprocessed to evaluate following [Feature 3DGS](https://github.com/ShijieZhou-UCLA/feature-3dgs).
 
+## Pretrained Weights
+Our pretrained checkpoints are available on [Hugging Face](https://huggingface.co/honggyuAn/C3G/tree/main).
+
+* `gaussian_decoder.ckpt`: Gaussian head trained for 2-view input.
+
+* `gaussian_decoder_multiview.ckpt`: Gaussian head trained for multi-view input.
+
+* `feature_decoder_lseg.ckpt`: Feature head trained with the LSeg model.
+
+* `feature_decoder_dinov3L.ckpt`: Feature head trained with the DINOv3-L model.
+
+* `feature_decoder_dinov2.ckpt`: Feature head trained with the DINOv2-L model.
 
 ## Training
 ### Gaussian head Training

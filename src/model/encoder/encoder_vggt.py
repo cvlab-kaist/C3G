@@ -58,7 +58,7 @@ class EncoderVGGTCfg:
     gaussians_per_token: int = 1
     gaussian_feature_dim : int = 0
     feature_dim: int = 0        ## don't setting it manually, it will be set in main.py
-    different_learnable_tokens: bool = True
+    different_learnable_tokens: bool = False
     
 
 class EncoderVGGT(Encoder[EncoderVGGTCfg]):
