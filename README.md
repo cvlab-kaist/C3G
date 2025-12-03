@@ -89,36 +89,36 @@ For 3D scene understanding evaluation, we use [ScanNet](http://www.scan-net.org/
 ## Pretrained Weights
 Our pretrained checkpoints are available on [Hugging Face](https://huggingface.co/honggyuAn/C3G/tree/main).
 
-* `gaussian_decoder.ckpt`: Gaussian head trained for 2-view input.
+* `gaussian_decoder.ckpt`: Gaussian Decoder trained for 2-view input.
 
-* `gaussian_decoder_multiview.ckpt`: Gaussian head trained for multi-view input.
+* `gaussian_decoder_multiview.ckpt`: Gaussian Decoder trained for multi-view input.
 
-* `feature_decoder_lseg.ckpt`: Feature head trained with the LSeg model.
+* `feature_decoder_lseg.ckpt`: Feature Decoder trained with the LSeg model.
 
-* `feature_decoder_dinov3L.ckpt`: Feature head trained with the DINOv3-L model.
+* `feature_decoder_dinov3L.ckpt`: Feature Decoder trained with the DINOv3-L model.
 
-* `feature_decoder_dinov2.ckpt`: Feature head trained with the DINOv2-L model.
+* `feature_decoder_dinov2.ckpt`: Feature Decoder trained with the DINOv2-L model.
 
 ## Training
-### Gaussian head Training
-For training Gaussian head, you can run the following commands.
+### Gaussian Decoder Training
+To train the Gaussian Decoder, you can run the following commands.
 
-To train Gaussian head:
+To train the Gaussian Decoder:
 ```bash
 python -m src.main +training=gaussian_head wandb.mode=online wandb.name="wandb_name"
 ```
-To train Gaussian head when multi-view is available:
+To train the Gaussian Decoder when multi-view is available:
 ```bash
 python -m src.main +training=gaussian_head_multiview wandb.mode=online wandb.name="wandb_name"
 ```
-To train Gaussian head faster when multi-view is available, you can continue from the 2-view training settings:
+To train the Gaussian Decoder faster when multi-view is available, you can continue from the 2-view training settings:
 ```bash
 python -m src.main +training=gaussian_head wandb.mode=online wandb.name="wandb_name" checkpointing.load="2view_checkpoint" model.decoder.low_pass_filter=0.3
 ```
 If you do not want to log to wandb, just set `wandb.mode=disabled`
 
-### Feature head Training
-For training Feature head, you can run the following commands.
+### Feature Decoder Training
+To train Feature Decoder, you can run the following commands.
 > [!IMPORTANT]
 > **Update the CUDA Rasterizer**
 > When you change the model, you must update `NUM_SEMANTIC_CHANNELS` in the config file.
@@ -134,7 +134,7 @@ For training Feature head, you can run the following commands.
 (e.g., 512 for LSeg, 768 for DINOv2-base, 1024 for DINOv2-large, DINOv3-large, or 128 for VGGT-tracking) -->
 
 
-To train Feature head with various VFM models (We tested LSeg, DINOv2-base, DINOv2-large, DINOv3-large, and VGGT-Tracking):
+To train the Feature Decoder with various VFM models (We tested LSeg, DINOv2-base, DINOv2-large, DINOv3-large, and VGGT-Tracking):
 ```bash
 ## for LSeg
 python -m src.main +training=feature_head_lseg wandb.mode=online wandb.name="wandb_name" model.encoder.pretrained_weights="2view_checkpoint"
@@ -153,7 +153,7 @@ python -m src.main +training=feature_head_vggt wandb.mode=online wandb.name="wan
 ```
 If you do not want to log to wandb, just set `wandb.mode=disabled`
 
-This is an example of training feature head when multi-view input is available:
+This is an example of training the Feature Decoder when multi-view input is available:
 ```bash
 ## for LSeg
 python -m src.main +training=feature_head_lseg_multiview wandb.mode=online wandb.name="wandb_name" model.encoder.pretrained_weights="multiview_checkpoint"
