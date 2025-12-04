@@ -5,9 +5,9 @@
     ·
     <a href="https://crepejung00.github.io/">Jaewoo Jung</a><sup>1*</sup>
     ·
-    <a href="">Mungyeom Kim</a><sup>1*</sup>
+    <a href="">Mungyeom Kim</a><sup>1</sup>
     .
-    <a href="https://sunghwanhong.github.io/">Sunghwan Hong</a><sup>2*</sup>
+    <a href="https://sunghwanhong.github.io/">Sunghwan Hong</a><sup>2</sup>
     ·
     <a href="https://kchyun.github.io/">Chaehyun Kim</a><sup>1</sup>
     ·
