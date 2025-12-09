@@ -184,6 +184,12 @@ If you do not want to log to wandb, just set `wandb.mode=disabled`
 ## Citation
 
 ```
+@article{an2025c3g,
+  title={C3G: Learning Compact 3D Representations with 2K Gaussians},
+  author={An, Honggyu and Jung, Jaewoo and Kim, Mungyeom and Hong, Sunghwan and Kim, Chaehyun and Fukuda, Kazumi and Jeon, Minkyeong and Han, Jisang and Narihira, Takuya and Ko, Hyuna and others},
+  journal={arXiv preprint arXiv:2512.04021},
+  year={2025}
+}
 ```
 
 ## Acknowledgement
