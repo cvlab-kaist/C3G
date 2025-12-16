@@ -71,7 +71,7 @@ Then, you should download VGGT pretrained weights from [VGGT](https://github.com
 Here is an example:
 ```
 mkdir -p pretrained_weights
-wget https://huggingface.co/facebook/VGGT-1B/resolve/main/model.pt?download=true -O ./pretrained_wegiths/model.pt
+wget https://huggingface.co/facebook/VGGT-1B/resolve/main/model.pt?download=true -O ./pretrained_weights/model.pt
 ```
 
 
