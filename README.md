@@ -38,7 +38,7 @@
 
 <p align="center">
   <a href="">
-    <img src="assets/teaser.jpg" alt="Logo" width="90%">
+    <img src="assets/teaser.jpg" alt="Logo" width="100%">
   </a>
 </p>
 
